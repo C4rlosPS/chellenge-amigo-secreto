@@ -1,7 +1,7 @@
 let nomes = [];
 let numerosSorteados = [];
 let nomesSorteados = [];
-let = numAleatorio;
+let numAleatorio;
 
 function limparCampo(tag) {
     let input = document.querySelector(tag);
@@ -9,10 +9,20 @@ function limparCampo(tag) {
 }
 
 function adicionarAmigo(){
+    let txtLista ="";
+    let count = 0;
     let nome = document.getElementById('amigo');
+
     nomes.push(nome.value);
+
+    nomes.forEach(nome => {
+        txtLista += `- ${nomes[count]}` + `</br>`;
+        count++;
+    });
+
     let listaAmigos = document.getElementById('listaAmigos');
-    listaAmigos.innerHTML = `${nomes} `;
+    listaAmigos.innerHTML = " ";
+    listaAmigos.innerHTML = `${txtLista}`;
     limparCampo('input');
 }
 
