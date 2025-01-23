@@ -1,11 +1,14 @@
 let nomes = [];
-let numerosSorteados = [];
 let nomesSorteados = [];
 let numAleatorio;
 
 function limparCampo(tag) {
     let input = document.querySelector(tag);
     input.value = ''; 
+}
+function atualizarLista(id) {
+    let lista = document.getElementById(id);
+    lista.innerHTML = ''; 
 }
 
 function adicionarAmigo(){
@@ -24,22 +27,23 @@ function adicionarAmigo(){
     listaAmigos.innerHTML = " ";
     listaAmigos.innerHTML = `${txtLista}`;
     limparCampo('input');
+    atualizarLista('resultado')
 }
 
 function sortearAmigo(){
 
-    do{
-        numAleatorio = parseInt(Math.random() * nomes.length + 1);
-    }while(numerosSorteados.includes(numAleatorio))
+    numAleatorio = parseInt(Math.random() * nomes.length + 1);
 
-    numerosSorteados.push(numAleatorio);
+    let resultado = document.getElementById('resultado');
 
-    if(nomesSorteados.includes(nomes[numAleatorio - 1])){
-        sortearAmigo();
+    if(nomes.length < 2){
+        alert('Digite mais nomes');
     }else{
-        let resultado = document.getElementById('resultado');
         resultado.innerHTML = `O vencedor é ${nomes[numAleatorio - 1]}`;
-    }
+        nomes = [];
+        listaAmigos.innerHTML = ``;
+        numAleatorio = 0;
+        atualizarLista('listaAmigos');
 
-    nomesSorteados.push(nomes[numAleatorio - 1]);
+    }
 }
