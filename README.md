@@ -28,3 +28,7 @@ main.js: Arquivo JavaScript com as funcionalidades descritas.
 ## Contribuindo
 Sinta-se à vontade para fazer um fork deste projeto e enviar pull requests. Toda contribuição é bem-vinda!
 
+
+## Confira como ficou no link abaixo:
+
+https://chellenge-amigo-secreto.vercel.app/
