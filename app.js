@@ -16,7 +16,16 @@ function adicionarAmigo(){
     let count = 0;
     let nome = document.getElementById('amigo');
 
-    nomes.push(nome.value);
+    
+    if(nome.value == ''){
+        alert('Digite um nome');
+        return;
+    }else if(nomes.includes(nome.value)){
+        alert('Nome já cadastrado');
+        return;
+    }else{
+        nomes.push(nome.value);
+    }
 
     nomes.forEach(nome => {
         txtLista += `- ${nomes[count]}` + `</br>`;
